@@ -1,21 +1,14 @@
 # How-To-Signatures
 
-This repository contains the source code for:
+This repository contains example code snippets for generating and verifying signatures on-chain and off-chain.
 
-1. Generating signatures
-2. Verifying signatures
+## Getting Started
 
-## Prerequisite Knowledge
+1. Clone the repo
+2. Run `npm install` to install the relevant dependencies for off-chain generation and verification of signatures.
+3. Run `forge install` to install the relevant dependencies for on-chain generation and verification of signatures.
+4. The off-chain code examples can be found in the [main.js](./main.js) file, while on-chain code examples are in [main.t.sol](./test/main.t.sol).
 
-Basic understanding of:
-- [foundry](https://book.getfoundry.sh/)
-- [ethersjs](https://docs.ethers.org/v5/)
+## WARNING
 
-## How It Works
-
-The typical usage for signatures is to generate it off-chain and verify it on-chain. A good example of this is the `Permit()` function from [EIP2612](https://eips.ethereum.org/EIPS/eip-2612).
-
-## Usage
-
-- Source code for the offchain generation and verification of signatures can be found in [main.js](./main.js).
-- Source code for the onchain generation and verification of signatures can be found in [main.t.sol](./src/main.t.sol).
+**DO NOT USE YOUR OWN PRIVATE KEY IN THE `.env` FILE BECAUSE YOU MAY ACCIDENTALLY COMMIT IT TO GITHUB.**
