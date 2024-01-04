@@ -56,6 +56,8 @@ const main = async () => {
 
   signature = await wallet.signTypedData(domain, types, value);
   address = ethers.verifyTypedData(domain, types, value, signature);
+  console.log("TypedData   :");
+  console.log(value);
   console.log(`Signature   : ${signature}`);
   console.log(`Verification: ${address == me ? 'Success ✅' : 'Failed ❌'}`);
 }
