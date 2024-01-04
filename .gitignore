@@ -10,8 +10,5 @@ out/
 # Docs
 docs/
 
-# Dotenv file
-.env
-
 # Node files
 /node_modules
