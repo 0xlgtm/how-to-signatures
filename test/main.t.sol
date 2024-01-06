@@ -72,16 +72,16 @@ contract MainTest is Test {
         // 3. Hash the message
         bytes32 messageHash = MessageHashUtils.toTypedDataHash(domainSeperator, structHash);
 
-        // 3. Sign the hash
+        // 4. Sign the hash
         (uint8 v, bytes32 r, bytes32 s) = vm.sign(pk, messageHash);
 
-        // 4a. Either verify with the signature
+        // 5a. Either verify with the signature
         bytes memory signature = abi.encodePacked(r, s, v);
         assertEq(signature.length, 65);
         address signer = ECDSA.recover(messageHash, signature);
         assertEq(signer, owner);
 
-        // 4b. or verify with the individual v, r, s components
+        // 5b. or verify with the individual v, r, s components
         signer = ECDSA.recover(messageHash, v, r, s);
         assertEq(signer, owner);
     }
